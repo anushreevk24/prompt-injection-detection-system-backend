@@ -1,9 +1,10 @@
-# Required
 numpy>=1.26
-
-# Optional: semantic embeddings
-sentence-transformers>=3.0
-
-# Optional: advanced NLP later
-spacy>=3.7
+pandas>=2.2
+scikit-learn==1.7.2
+joblib>=1.4
+fastapi
 uvicorn[standard]
+sentence-transformers>=3.0
+spacy>=3.7
+pypdf
+python-docx
