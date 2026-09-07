@@ -2,6 +2,7 @@ from typing import Any, Dict, cast
 
 import numpy as np
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 
 from data.feedback_store import ATHSFeedbackStore
@@ -19,6 +20,17 @@ app = FastAPI(
     description="API for prompt injection threat detection.",
     version="1.0.0",
 )
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "https://prompt-injection-detection-system.vercel.app",
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 
 
 # =========================================================
